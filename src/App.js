@@ -9,7 +9,6 @@ const [ data, setData ] = useState('');
 useEffect(() => {
   axios.get(`https://swapi.dev/api/people`)
   .then(resp => {
-    console.log(resp.data)
     setData(resp.data)
   })
   .catch(err => {
@@ -26,9 +25,9 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1 className="Header">{data === '' ? "Hang ON it's loading" : "Star Wars Characters"}</h1>
+      <h1 className="Header">{data === '' ? "Hang ON it's loading" : "Star Wars"}</h1>
       <h2></h2>
-      {data === '' ? "Hang ON it's loading" : <Characters data={data}/>}
+      {data === '' ? "Hang ON it's loading" : <Characters data={data} id={data.name}/>}
     </div>
   );
 }
