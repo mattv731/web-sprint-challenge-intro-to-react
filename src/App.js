@@ -4,17 +4,18 @@ import './App.css';
 import axios from 'axios';
 
 const App = () => {
-const { data, setData } = useState('');
+const [ data, setData ] = useState('');
 
 useEffect(() => {
   axios.get(`https://swapi.dev/api/people`)
   .then(resp => {
+    console.log(resp.data)
     setData(resp.data)
   })
   .catch(err => {
-    console.error('error')
+    console.error(err)
   })
-}, [])
+}, [Characters])
 
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -25,8 +26,9 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
-      <Characters data={data} />
+      <h1 className="Header">{data === '' ? "Hang ON it's loading" : "Star Wars Characters"}</h1>
+      <h2></h2>
+      {data === '' ? "Hang ON it's loading" : <Characters data={data}/>}
     </div>
   );
 }

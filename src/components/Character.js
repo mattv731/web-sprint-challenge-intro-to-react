@@ -5,7 +5,7 @@ const Character = props => {
 
     return (
         <div>
-            <h3>Hello World!</h3>
+            <h3>{props.data.name}</h3>
         </div>
     )
 }
