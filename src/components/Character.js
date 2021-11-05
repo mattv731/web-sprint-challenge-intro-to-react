@@ -8,7 +8,6 @@ const StyleCharacter = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
 `
 const StyledDiv = styled.div`
     padding: 20px;
@@ -16,7 +15,7 @@ const StyledDiv = styled.div`
 const StyledSpan = styled.span`
     background-color: red;
     color: #f8f8f8;
-    font-size:40px;
+    font-size:2rem;
     padding: 2px 10px;
     border-radius: 4px;
 `
